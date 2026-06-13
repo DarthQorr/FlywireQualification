@@ -1,6 +1,6 @@
 # The Discovery of a Conserved Visual Feature Extraction and Sensorimotor Relay Pipeline across three diverse neurological datasets
 
-Using a Backtracking DFS (Depth-First Search) algorithm, a Maximum Common Induced Directed Subgraph of 253 neurons was discovered. This massive circuit is topologically conserved at the single-synapse level across three disparate macroscopic datasets: the adult female brain (FAFB), the male optic lobe (MAOL), and the male nerve cord (MCNS). The strict mathematical isomorphism of this structure across sensory and motor organs indicates a fundamental, hardwired biological module.
+Using a Backtracking DFS (Depth-First Search) algorithm, an Induced Directed Subgraph of 253 neurons has been discovered to be topologically conserved at the single-synapse level across three disparate macroscopic datasets: the adult female brain (FAFB), the male optic lobe (MAOL), and the male nerve cord (MCNS). The strict mathematical isomorphism of this structure across sensory and motor organs indicates a fundamental, hardwired biological module.
 
 ## Structural Visualizations
 The Figures can all be found at the root.
@@ -14,7 +14,7 @@ We hypothesize that this subgraph functions as a complete, highly conserved Visu
 The intrinsic optic cells (Tm neurons) act as the primary computational filter, utilizing Glutamatergic and GABAergic lateral inhibition to process raw visual inputs (such as contrast, motion, and edge detection) while canceling out background noise. Once a specific visual feature is isolated—such as a small moving object or a looming predator—the signal is handed off to the LC11 and LC12 projection neurons. These Lobula Columnar neurons utilize highly excitatory Cholinergic (ACh) synapses to instantly relay this threat-vector data out of the eye, through the central brain, and down into the nerve cord (MCNS) to trigger a rapid, hardwired motor evasion reflex. The algorithm successfully captured both the sensory "calculator" and the motor "trigger" within a single isomorphic graph.
 
 ## Conclusion
-This large, invariant subgraph common to 3 proves that despite profound macroscopic differences between eyes and motor nerve cords, the entire topological structure required for high-speed, noise-filtered sensorimotor translation is strictly preserved across the Drosophila connectome.
+This large, invariant subgraph common to 3 datasets proves that despite profound macroscopic differences between eyes and motor nerve cords, the entire topological structure required for high-speed, noise-filtered sensorimotor translation is strictly preserved across the Drosophila connectome.
 
 
 ## References
