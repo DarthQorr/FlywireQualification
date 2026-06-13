@@ -1,6 +1,6 @@
 # README
 
-This repository contains all my work pertaining to the FlyWire Qualification challenge. 
+This repository contains all my work pertaining to the FlyWire Qualification challenge. To directly answer the question, I have managed to get **Maximise N to 253 on the FAFB, MAOL, and MCNS datasets.**
 
 ## Challenge:
 We have been given 5 connectomic datasets that contain edge lists between neurons. We have to find the largest weakly-connected directed induced subgraph shared across 3 of the 5 datasets and are thus mutually isomorphic.
@@ -12,7 +12,7 @@ I took a hybrid Python-C++ pipeline to aggressively prune the massive datasets i
 
 I also built a separate testing algorithm at *validator.cpp* to ensure that all the necessary conditions are met by this circuit.
 
-In the end, the largest weakly-connected directed induced subgraph we found was **237 Neurons** in size and is common to the **FAFB, BANC, and MAOL datasets** and can be found in the file network.csv and  circuit_banc_banc_maol.csv. Thus, we managed to maximise **N to 237**.
+In the end, the largest weakly-connected directed induced subgraph we found was **253 Neurons** in size and is common to the **FAFB, BANC, and MAOL datasets** and can be found in the file network.csv and  circuit_banc_banc_maol.csv. Thus, we managed to maximise **N to 253**.
 
 
 ## Technicals for the Approach:
@@ -124,4 +124,14 @@ g++ -O3 validator.cpp -o validator
 ./validator
 
 If it says its a Valid submission, then it satisfies all the given conditions!
+
+
+### Time Constraints
+To be completely honest, if you are in a hurry to get my algorithm working, then you are better off reducing the time constraints that I have built-in. I have currently set each combination to 180 seconds, after which it ends the processes for that combination and saves the largest circuit found up to that point. Increasing the time given to each combination has steeply diminishing results. **You can safely reduce it to 60 seconds and still get N = 237 on the FAFB, MANC, MAOL datasets and get it just a few minutes as opposed to waiting for half an hour with my current constraint of 180 seconds**
+
+
+There are two instances of the following line in main.cpp:
+if (chrono::duration_cast<chrono::seconds>(current_time - start_time).count() > 180)
+
+**You can replace 180 with 60 and still get only a slightly diminished result!**
 
