@@ -82,8 +82,8 @@ void dfsWeakConnectivity(int curr, const vector<vector<bool>>& matrix, vector<bo
 int main() {
     string solution_file = "network.csv";
     string dataset1 = "fafb_783_edge_list.csv";
-    string dataset2 = "banc_626_edge_list.csv";
-    string dataset3 = "maol_1.1_edge_list.csv";
+    string dataset2 = "maol_1.1_edge_list.csv";
+    string dataset3 = "mcns_0.9_edge_list.csv";
 
     unordered_map<long long, int> map1, map2, map3;
     int N = 0;

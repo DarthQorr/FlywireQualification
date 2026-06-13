@@ -175,7 +175,7 @@ void expandSubgraph(Graph& g1, Graph& g2, Graph& g3,
                             
     // 1. The Time Budget: Abort this branch if it takes longer than 60 seconds
     auto current_time = chrono::high_resolution_clock::now();
-    if (chrono::duration_cast<chrono::seconds>(current_time - start_time).count() > 60) return;
+    if (chrono::duration_cast<chrono::seconds>(current_time - start_time).count() > 180) return;
 
     // Track the largest N found so far
     if (sub1.size() > max_N) {
@@ -200,7 +200,7 @@ void expandSubgraph(Graph& g1, Graph& g2, Graph& g3,
     // 3. Test Candidates
     for (int c1 : frontier_g1) {
         auto current_time = chrono::high_resolution_clock::now();
-        if (chrono::duration_cast<chrono::seconds>(current_time - start_time).count() > 60) {
+        if (chrono::duration_cast<chrono::seconds>(current_time - start_time).count() > 180) {
             throw runtime_error("Timeout"); // Instantly shatters all loops and call stacks!
         }
 
