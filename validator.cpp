@@ -127,7 +127,6 @@ int main() {
 
     if (is_isomorphic) {
         cout << "  -> PASS: Subgraphs are perfectly isomorphic!" << endl;
-        cout << "  -> Total shared directed edges in this circuit: " << edge_count << endl;
     }
 
     // ---------------------------------------------------------
