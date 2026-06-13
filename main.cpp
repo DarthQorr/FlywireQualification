@@ -173,7 +173,7 @@ void expandSubgraph(Graph& g1, Graph& g2, Graph& g3,
                     int& max_N, chrono::time_point<chrono::high_resolution_clock> start_time,
                     vector<int>& best_sub1, vector<int>& best_sub2, vector<int>& best_sub3) {
                             
-    // 1. The Time Budget: Abort this branch if it takes longer than 60 seconds
+    // 1. The Time Budget: Abort this branch if it takes longer than 180 seconds
     auto current_time = chrono::high_resolution_clock::now();
     if (chrono::duration_cast<chrono::seconds>(current_time - start_time).count() > 180) return;
 
@@ -307,7 +307,7 @@ int findMaxSubgraph(const string& file1, const string& file2, const string& file
     try {
         expandSubgraph(g1, g2, g3, sub1, sub2, sub3, in_sub1, in_sub2, in_sub3, max_N_found, start_time, best_sub1, best_sub2, best_sub3);
     } catch (const exception& e) {
-        cout << "  [Time Budget Reached] 60 seconds elapsed. Halting branch." << endl;
+        cout << "  [Time Budget Reached] Halting branch." << endl;
     }
     
     cout << "  [DFS Complete] Largest Isomorphic Subgraph N = " << max_N_found << endl;    cout << "  [Memory Freed] Search complete for this triplet." << endl;
