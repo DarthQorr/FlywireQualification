@@ -1,4 +1,4 @@
-###Discovery of a Conserved Visual Feature Extraction and Sensorimotor Relay Pipeline
+### Discovery of a Conserved Visual Feature Extraction and Sensorimotor Relay Pipeline
 
 Uasing a Backtracking DFS (Depth-First Search) algorithm, a Maximum Common Induced Directed Subgraph of 253 neurons was discovered. This massive circuit is topologically conserved at the single-synapse level across three disparate macroscopic datasets: the adult female brain (FAFB), the male optic lobe (MAOL), and the male nerve cord (MCNS). The strict mathematical isomorphism of this structure across sensory and motor organs indicates a fundamental, hardwired biological module. Owing to the character of the 
 
