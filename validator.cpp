@@ -80,7 +80,7 @@ void dfsWeakConnectivity(int curr, const vector<vector<bool>>& matrix, vector<bo
 }
 
 int main() {
-    string solution_file = "circuit_fafb_banc_maol.csv"; // Change to your actual output file name
+    string solution_file = "network.csv";
     string dataset1 = "fafb_783_edge_list.csv";
     string dataset2 = "banc_626_edge_list.csv";
     string dataset3 = "maol_1.1_edge_list.csv";

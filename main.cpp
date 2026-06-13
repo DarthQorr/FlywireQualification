@@ -312,9 +312,22 @@ int findMaxSubgraph(const string& file1, const string& file2, const string& file
     
     cout << "  [DFS Complete] Largest Isomorphic Subgraph N = " << max_N_found << endl;    cout << "  [Memory Freed] Search complete for this triplet." << endl;
 
-    string out_filename = "circuit_" + file1.substr(0,4) + "_" + file2.substr(0,4) + "_" + file3.substr(0,4) + ".csv";
+    auto getCleanName = [](string filename) {
+        size_t pos = filename.find("_edge_list");
+        if (pos != string::npos) return filename.substr(0, pos);
+        return filename;
+    };
+
+    string clean1 = getCleanName(file1);
+    string clean2 = getCleanName(file2);
+    string clean3 = getCleanName(file3);
+
+    // This creates a name like: circuit_fafb_783_banc_626_maol_1.1.csv
+    string out_filename = "circuit_" + clean1 + "_" + clean2 + "_" + clean3 + ".csv";
     ofstream out(out_filename);
-    out << "Dataset1,Dataset2,Dataset3\n";
+    
+    // Set the headers to the actual dataset names!
+    out << clean1 << "," << clean2 << "," << clean3 << "\n";
     
     for(size_t i = 0; i < best_sub1.size(); i++){
         // Translate the 0-N index back to the 64-bit ID
@@ -323,7 +336,7 @@ int findMaxSubgraph(const string& file1, const string& file2, const string& file
             << g3.index_to_id[best_sub3[i]] << "\n";
     }
     out.close();
-    cout << "  [Export] Saved winning circuit to " << out_filename << endl;
+    cout << "  [Export] Saved branch circuit to " << out_filename << endl;
 
 
     return max_N_found;
@@ -380,6 +393,29 @@ int main() {
              << best_combination[2] << endl;
     }
     cout << "========================================" << endl;
+
+
+    if(global_max_N > 0) {
+        auto getCleanName = [](string filename) {
+            size_t pos = filename.find("_edge_list");
+            if (pos != string::npos) return filename.substr(0, pos);
+            return filename;
+        };
+
+        // Reconstruct the winning filename
+        string winning_filename = "circuit_" + 
+                                  getCleanName(best_combination[0]) + "_" + 
+                                  getCleanName(best_combination[1]) + "_" + 
+                                  getCleanName(best_combination[2]) + ".csv";
+
+        // Read the winning file and copy it to network.csv
+        ifstream src(winning_filename, ios::binary);
+        ofstream dst("network.csv", ios::binary);
+        dst << src.rdbuf();
+
+        cout << "-> Successfully copied the global winner to network.csv" << endl;
+    }
+
 
     return 0;
 }
