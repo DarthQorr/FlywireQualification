@@ -20,7 +20,7 @@ The intrinsic optic cells (Tm neurons) act as the primary computational filter, 
 In the case of MCNS, the input layer is plugged into the mechanoreceptors of the legs and wings. Here, this very same circuit may act as a physical filter, wherein the inhibitory neurons cancel out the noise of the fly's own movements so as to be more perceptive of their surroundings. The bottleneck neurons act as a sudden-impact detector to trigger an immediate motor reflex if the fly is swatted at.
 
 ## Conclusion
-This large, invariant subgraph common to 3 datasets proves that despite profound macroscopic differences between eyes and motor nerve cords, the entire topological structure required for high-speed, noise-filtered sensorimotor translation is strictly preserved across the Drosophila connectome, and that such a module might serve as a common relay for reflex impulses.
+This large, invariant subgraph common to 3 datasets proves that despite profound macroscopic differences between eyes and motor nerve cords, the entire topological structure required for high-speed, noise-filtered sensorimotor translation is strictly preserved across the Drosophila connectome, and that such a module might serve as a common relay in reflex arcs.
 
 
 ## References
