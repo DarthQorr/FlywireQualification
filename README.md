@@ -1,25 +1,13 @@
 # README
 
 This repository contains all my work pertaining to the FlyWire Qualification challenge. 
-After having read the email that explained the challenge, I could think of 2 equally plausible interpretations to the challenge. 
-
-My **First interpretation**, which will be called the **Math-based Approach** was founded on the following line from the first email “All analyses should be performed on the corresponding unweighted directed graphs provided below as edge lists:”, followed by the 5 datasets. In other words, I am not allowed to make use of the extensive metadata available to me on the Codex  Platform and can only use the 5 sets of edge lists provided to me. Thus, I would have to rely on pure, hard Mathematics to solve it using this approach. This is my primary approach since I feel that a literal interpretation of the rules only allows this. **I have executed this and have explained how I went about it in this README file**. All data and files at the root level pertain to this first approach!
-
-However, there is a **Second Interpretation** that I have also executed, which I call the **Biology-based Approach**. This approach takes its cues from this line in the email “Please note that certain aspects of this assignment are intentionally left unspecified; you will be evaluated on your ability to make reasonable assumptions …. ”.
-There is an absolute wealth of data available on the Codex platform that would greatly aid us in solving this challenge. If we are to find patterns in the datasets, it only makes sense that there would be some correlation amongst the metadata that could be exploited. Additionally, I have used information (and have cited it too!) from newly released scientific papers that would help us out here. I have looked long and hard at the wording, and have come to the conclusion that this approach does violate one of the explicitly stated rules of not using external data for analyses. However, **I have included it in this repository under the “Biology-based Approach” folder. All of its code and files will be in that folder and not under root.**
-
-**I have explained both approaches in this README file and would love it if you go through both!**
-
-At the root level, I have included the 10 circuits that I generated as well as *network.csv*. The glossary of files can be found at the bottom of the page and it explains what each of them does.
-
-
 
 ## Challenge:
 We have been given 5 connectomic datasets that contain edge lists between neurons. We have to find the largest weakly-connected directed induced subgraph shared across 3 of the 5 datasets and are thus mutually isomorphic.
 
 
 
-## Summary of Math-based approach:
+## Summary of my approach:
 I took a hybrid Python-C++ pipeline to aggressively prune the massive datasets into more manageable data. The Python file *Phase2.py* calculates *Complexity scores* for each directed edge. These Complexity scores allow us to isolate massive Hub Neurons to act as starting seeds, thereby eliminating tens of thousands of false positives. I then fed these seed files to the C++ engine at *main.cpp* to conduct the loading and utilisation of the data. It uses coordinate compression to ensure that the massive Neuron IDs won’t eat up exabytes of space and it also utilizes a dual storage memory architecture: Adjacency lists to enforce the “weakly connected” rule paired with flat 1D bit-matrices to ensure instantaneous O(1) structural validation. Once the data is loaded so, I executed a recursive backtracking Depth-First Search (DFS) algorithm to extract the largest possible Neuron circuit. This algorithm has a built-in Timeout system that ensures that horizontal infinite loops are eliminated and also has a way to weed out autapses.
 
 I also built a separate testing algorithm at *validator.cpp* to ensure that all the necessary conditions are met by this circuit.
@@ -27,7 +15,7 @@ I also built a separate testing algorithm at *validator.cpp* to ensure that all 
 In the end, the largest weakly-connected directed induced subgraph we found was **237 Neurons** in size and is common to the **FAFB, BANC, and MAOL datasets** and can be found in the file network.csv and  circuit_banc_banc_maol.csv. Thus, we managed to maximise **N to 237**.
 
 
-## Technicals for the Math-based Approach:
+## Technicals for the Approach:
 My approach can be broadly divided into 5 steps:
 
 ### 1. Step 1: Pre-computation:
