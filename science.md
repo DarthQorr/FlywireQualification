@@ -9,6 +9,8 @@ Figure 1 and Figure 2: Network Topology. The network graph of the sampled subset
 
 Figure 3: 3D Morphological Mesh. Spatial rendering within the FAFB brain volume demonstrates dense local arborization within the optic lobes (medulla/lobula), converging into long-range axonal tracts projecting toward the central brain.
 
+The rest of the data mentioned pertaining to the neurological makeup of the circuit below can be found in the folder *codexdata*.
+
 ## Biological Observations and Hypothesis
 Owing to the constraints of the CODEX platform, we were only able to analyse around half of the 253 neurons of this circuit. Metadata extraction of the 111-neuron sample via the FlyWire Codex reveals a highly structured two-stage neural architecture. The circuit is dominated by intrinsic Optic Neurons, specifically Transmedullary (Tm) cells (e.g., Tm9, Tm1, Tm2), which subsequently synapse onto Visual Projection Neurons (VPNs), specifically Lobula Columnar cells (LC12, LC11).
 Neurochemically, the circuit utilizes a tri-modal transmitter system: Acetylcholine (54 nodes) drives fast excitatory signaling, while Glutamate (27 nodes) and GABA (16 nodes) provide critical inhibitory and modulatory control. Additionally, the presence of a large number of synapses between neurons in this circuit might indicate the presence of a neurological path taken by reflex impulses, since they need multiple connections as a fail-safe to ensure that the reflex impulses reach their destination swiftly and reliably. This high-fidelity circuit can also ensure that normal, slower brain processing can be bypassed.  
