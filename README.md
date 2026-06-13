@@ -1,6 +1,6 @@
 # README
 
-This repository contains all my work pertaining to the FlyWire Qualification challenge. To directly answer the question, I have managed to get **Maximise N to 253 on the FAFB, MAOL, and MCNS datasets.**
+This repository contains all my work pertaining to the FlyWire Qualification challenge. To directly answer the question, I have managed to **Maximise N to 253 on the FAFB, MAOL, and MCNS datasets.**
 
 ## Challenge:
 We have been given 5 connectomic datasets that contain edge lists between neurons. We have to find the largest weakly-connected directed induced subgraph shared across 3 of the 5 datasets and are thus mutually isomorphic.
